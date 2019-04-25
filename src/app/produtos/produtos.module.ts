@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CategoriasPesquisaComponent } from './categorias-pesquisa/categorias-pesquisa.component';
+import { ProdutosPesquisaComponent } from './produtos-pesquisa/produtos-pesquisa.component';
 
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
@@ -8,9 +8,9 @@ import {TableModule} from 'primeng/table';
 import {TooltipModule} from 'primeng/tooltip';
 import { FormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [CategoriasPesquisaComponent],
+  declarations: [ProdutosPesquisaComponent],
   exports:[
-    CategoriasPesquisaComponent
+    ProdutosPesquisaComponent
   ],
   imports: [
     CommonModule,
@@ -21,4 +21,4 @@ import { FormsModule } from '@angular/forms';
     TooltipModule
   ]
 })
-export class CategoriasModule { }
+export class ProdutosModule { }

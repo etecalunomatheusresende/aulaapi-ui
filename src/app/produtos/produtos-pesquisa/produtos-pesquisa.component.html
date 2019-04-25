@@ -2,11 +2,11 @@
   <div class="ui-g">
       <form autocomplete="off" (ngSubmit)="pesquisar()">
           <div class="ui-g-12">
-              <h1>Categorias</h1>
+              <h1>Produtos</h1>
           </div>
 
           <div class="ui-g-12 ui-fluid">
-              <label>Nome da Categoria</label>
+              <label>Nome do Produto</label>
               <input pInputText type="text" name="nome" [(ngModel)]="filtro.nome">
           </div>
 
@@ -21,7 +21,7 @@
 
 <div class="ui-g">
   <div class="ui-g-12">
-          <p-table [value]="categorias" [rows]="filtro.itensPorPagina"
+          <p-table [value]="produtos" [rows]="filtro.itensPorPagina"
           [totalRecords] = "totalRegistros"
           [paginator] = "true"
           [lazy]="true"
@@ -30,18 +30,22 @@
                   <ng-template pTemplate="header">
                       <tr>
                           <th class="col-id-header"> #</th>
-                          <th >Nome da Categoria</th>
+                          <th >Nome do Produto</th>
+                          <th >Preço do Produto</th>
+                          <th >Categoria do Produto</th>
                           <th class="col-acoes-header"></th>
                           
                       </tr>
                   </ng-template>
-                  <ng-template pTemplate="body" let-cat>
+                  <ng-template pTemplate="body" let-prod>
                       <tr>
-                          <td class="col-acoes">{{cat.id}}</td>
-                          <td>{{cat.nome}}</td>
+                          <td class="col-acoes">{{prod.id}}</td>
+                          <td>{{prod.nome}}</td>
+                          <td>{{prod.preco}}</td>
+                          <td>{{prod.categoria}}</td>
                           <td class="col-acoes">
 
-                              <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></button> &nbsp;
+                              <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></button>
                               <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
                           </td>
                          
@@ -50,7 +54,7 @@
                   <ng-template pTemplate="emptymessage">
                     <tr>
                         <td colspan="3">
-                            Nenhuma categoria encontrada.
+                            Nenhuma produto encontrado.
                         </td>
                     </tr>
                   </ng-template>
