@@ -10,6 +10,15 @@
               <input pInputText type="text" name="nome" [(ngModel)]="filtro.nome">
           </div>
 
+          <div class="ui-g-12 ui-fluid">
+            <label>Preço do Produto</label>
+            <input pInputText type="text" name="nome" [(ngModel)]="filtro.preco">
+        </div>
+
+        <div class="ui-g-12 ui-fluid">
+            <label>Categoria do Produto</label>
+            <input pInputText type="text" name="nome" [(ngModel)]="filtro.categoria">
+        </div>
 
           <div class="ui-g-12">
               <button pButton type="submit" label="Pesquisar">
@@ -30,10 +39,10 @@
                   <ng-template pTemplate="header">
                       <tr>
                           <th class="col-id-header"> #</th>
-                          <th >Nome do Produto</th>
-                          <th >Preço do Produto</th>
-                          <th >Categoria do Produto</th>
-                          <th class="col-acoes-header"></th>
+                          <th>Nome do Produto</th>
+                          <th>Preço do Produto</th>
+                          <th>Categoria do Produto</th>
+                          <th class=" col-acoes-header"></th>
                           
                       </tr>
                   </ng-template>
