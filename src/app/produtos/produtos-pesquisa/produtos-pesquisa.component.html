@@ -10,15 +10,7 @@
               <input pInputText type="text" name="nome" [(ngModel)]="filtro.nome">
           </div>
 
-          <div class="ui-g-12 ui-fluid">
-            <label>Preço do Produto</label>
-            <input pInputText type="text" name="nome" [(ngModel)]="filtro.preco">
-        </div>
-
-        <div class="ui-g-12 ui-fluid">
-            <label>Categoria do Produto</label>
-            <input pInputText type="text" name="nome" [(ngModel)]="filtro.categoria">
-        </div>
+         
 
           <div class="ui-g-12">
               <button pButton type="submit" label="Pesquisar">
@@ -30,18 +22,19 @@
 
 <div class="ui-g">
   <div class="ui-g-12">
-          <p-table [value]="produtos" [rows]="filtro.itensPorPagina"
+          <p-table [value]="produtos"
+          [rows]="filtro.itensPorPagina"
           [totalRecords] = "totalRegistros"
           [paginator] = "true"
           [lazy]="true"
-          [responsive]="true" (onLazyLoad)="aoMudarPagina($event)">
+          [responsive]="true" (onLazyLoad)="aoMudarPagina($event)" #tabela>
 
                   <ng-template pTemplate="header">
                       <tr>
-                          <th class="col-id-header"> #</th>
+                          <th class="col-id-header">#</th>
                           <th>Nome do Produto</th>
-                          <th>Preço do Produto</th>
-                          <th>Categoria do Produto</th>
+                          <th>Preço</th>
+                          <th>Categoria</th>
                           <th class=" col-acoes-header"></th>
                           
                       </tr>
@@ -51,7 +44,7 @@
                           <td class="col-acoes">{{prod.id}}</td>
                           <td>{{prod.nome}}</td>
                           <td>{{prod.preco}}</td>
-                          <td>{{prod.categoria}}</td>
+                          <td>{{prod.categoria?.nome}}</td>
                           <td class="col-acoes">
 
                               <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></button>

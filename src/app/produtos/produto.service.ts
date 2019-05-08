@@ -28,6 +28,7 @@ export class ProdutoService {
     params = params.append('nome', filtro.nome);
   }
 
+
   return this.http.get<any>(`${this.produtosUrl}`, {params})
   .toPromise()
   .then(response => {

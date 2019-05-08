@@ -19,7 +19,7 @@ export class ProdutosPesquisaComponent implements OnInit {
     this.pesquisar();
   }
 
-  pesquisar(pagina=0){
+  pesquisar(pagina = 0){
     this.filtro.pagina = pagina;
 
     this.produtoService.pesquisar(this.filtro)
